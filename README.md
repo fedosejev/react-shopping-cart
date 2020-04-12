@@ -17,6 +17,10 @@ Example of how to build a shopping cart with React.
 
 `yarn test`
 
+## Deploy to GitHub Pages
+
+`yarn deploy`
+
 ## More examples and tutorials
 
 [Visit React Tips website](http://react.tips).
