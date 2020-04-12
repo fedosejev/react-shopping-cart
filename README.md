@@ -5,6 +5,10 @@ Example of how to build a shopping cart with React.
 - See it in action: https://fedosejev.github.io/react-shopping-cart/
 - Step by step tutorial: coming soon.
 
+## Requirements
+
+[A list of requirements](./requirements/README.md) for this shopping cart.
+
 ## Install
 
 `yarn`
