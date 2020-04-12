@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import { calculateTotalPrice } from "../../utils";
+import { calculateTotalPrice } from "../../utils/business";
+import { formatPrice } from "../../utils/ui";
 import Button from "../Button/Button.component";
 import ShoppingCartEditItem from "../ShoppingCartEditItem/ShoppingCartEditItem.component";
 
@@ -40,7 +41,7 @@ function ShoppingCartItem(props) {
         <>
           <div>
             {props.item.quantity} x ${props.item.price} ={" "}
-            <strong>${calculateTotalPrice(props.item)}</strong>
+            <strong>${formatPrice(calculateTotalPrice(props.item))}</strong>
           </div>
 
           <div className="btn-group mt-2" role="group" aria-label="Change">

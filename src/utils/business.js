@@ -17,17 +17,8 @@ function calculateTotalNumberOfItems(items) {
   return items.reduce((total, item) => total + item.quantity, 0);
 }
 
-function concatenateClassNames({ baseClassName, customClassName }) {
-  if (customClassName) {
-    return `${baseClassName} ${customClassName}`;
-  }
-
-  return baseClassName;
-}
-
 export {
   calculateTotalPrice,
   calculateTotalToPay,
   calculateTotalNumberOfItems,
-  concatenateClassNames,
 };

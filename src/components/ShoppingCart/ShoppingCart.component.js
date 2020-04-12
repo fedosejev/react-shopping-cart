@@ -1,5 +1,9 @@
 import React, { useState, useEffect } from "react";
-import { calculateTotalToPay, calculateTotalNumberOfItems } from "../../utils";
+import {
+  calculateTotalToPay,
+  calculateTotalNumberOfItems,
+} from "../../utils/business";
+import { formatPrice } from "../../utils/ui";
 import ShoppingCartSummary from "../ShoppingCartSummary/ShoppingCartSummary.component";
 import ShoppingCartItem from "../ShoppingCartItem/ShoppingCartItem.component";
 
@@ -35,7 +39,7 @@ function ShoppingCart(props) {
           <h2>Shopping Cart</h2>
           <ShoppingCartSummary
             numberOfItems={calculateTotalNumberOfItems(items)}
-            totalToPay={calculateTotalToPay(items)}
+            totalToPay={formatPrice(calculateTotalToPay(items))}
             onClear={clearItems}
           />
           {items.map((item) => (

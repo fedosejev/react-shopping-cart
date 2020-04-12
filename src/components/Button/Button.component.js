@@ -1,5 +1,5 @@
 import React from "react";
-import { concatenateClassNames } from "../../utils";
+import { concatenateClassNames } from "../../utils/ui";
 
 const BASE_CLASS_NAME = "btn btn-outline-secondary btn-sm";
 

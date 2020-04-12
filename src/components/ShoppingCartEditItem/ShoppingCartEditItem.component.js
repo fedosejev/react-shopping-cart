@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
-import { calculateTotalPrice } from "../../utils";
+import { calculateTotalPrice } from "../../utils/business";
+import { formatPrice } from "../../utils/ui";
 import Button from "../Button/Button.component";
 
 function ShoppingCartEditItem(props) {
@@ -27,7 +28,10 @@ function ShoppingCartEditItem(props) {
   return (
     <div>
       <div className="text-left">
-        Price: ${calculateTotalPrice({ price: props.item.price, quantity })}
+        Price: $
+        {formatPrice(
+          calculateTotalPrice({ price: props.item.price, quantity })
+        )}
       </div>
 
       <form

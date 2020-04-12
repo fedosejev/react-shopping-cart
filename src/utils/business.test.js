@@ -2,8 +2,7 @@ const {
   calculateTotalPrice,
   calculateTotalToPay,
   calculateTotalNumberOfItems,
-  concatenateClassNames,
-} = require("./index");
+} = require("./business");
 
 describe("calculateTotalPrice", () => {
   it("calculates total price for item", () => {
@@ -85,16 +84,5 @@ describe("calculateTotalNumberOfItems", () => {
     ).toBe(6);
 
     expect(calculateTotalNumberOfItems([])).toBe(0);
-  });
-});
-
-describe("concatenateClassNames", () => {
-  it("concatenates base class name string with custom class name string", () => {
-    expect(
-      concatenateClassNames({
-        baseClassName: "btn",
-        customClassName: "btn-outline-secondary",
-      })
-    ).toBe("btn btn-outline-secondary");
   });
 });
