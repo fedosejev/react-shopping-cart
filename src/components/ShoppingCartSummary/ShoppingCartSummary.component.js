@@ -1,4 +1,5 @@
 import React from "react";
+import Button from "../Button/Button.component";
 
 function ShoppingCartSummary(props) {
   return (
@@ -10,14 +11,12 @@ function ShoppingCartSummary(props) {
         Total: <strong>${props.totalToPay}</strong>
       </div>
 
-      <button
-        type="button"
-        className="btn btn-outline-secondary btn-sm mt-3"
+      <Button
+        label="Clear shopping cart"
         onClick={props.onClear}
-        disabled={props.numberOfItems === 0}
-      >
-        Clear shopping cart
-      </button>
+        isDisabled={props.numberOfItems === 0}
+        className="mt-3"
+      />
     </div>
   );
 }

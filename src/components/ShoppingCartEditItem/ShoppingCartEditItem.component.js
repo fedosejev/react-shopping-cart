@@ -1,17 +1,13 @@
 import React, { useState, useEffect } from "react";
+import { calculateTotalPrice } from "../../utils";
+import Button from "../Button/Button.component";
 
-function EditShoppingCartItem(props) {
+function ShoppingCartEditItem(props) {
   const [quantity, setQuantity] = useState(0);
 
   useEffect(() => {
     setQuantity(props.item.quantity);
   }, [props]);
-
-  function calculateTotalPrice({ price, quantity }) {
-    const total = price * quantity;
-
-    return Math.round((total + Number.EPSILON) * 100) / 100;
-  }
 
   function saveQuantity() {
     props.onSaveQuantity({
@@ -52,43 +48,25 @@ function EditShoppingCartItem(props) {
         />
 
         <div className="btn-group ml-2" role="group" aria-label="Basic example">
-          <button
-            type="button"
-            className="btn btn-outline-secondary btn-sm"
-            onClick={addOne}
-          >
-            Add one
-          </button>
-          <button
-            type="button"
-            className="btn btn-outline-secondary btn-sm"
+          <Button label="Add one" onClick={addOne} />
+          <Button
+            label="Remove one"
             onClick={removeOne}
-            disabled={quantity === 0}
-          >
-            Remove one
-          </button>
+            isDisabled={quantity === 0}
+          />
         </div>
 
         <div className="btn-group ml-2" role="group" aria-label="Basic example">
-          <button
-            type="button"
-            className="btn btn-outline-secondary btn-sm"
+          <Button
+            label="Save"
             onClick={saveQuantity}
-            disabled={quantity === props.item.quantity}
-          >
-            Save
-          </button>
-          <button
-            type="button"
-            className="btn btn-outline-secondary btn-sm"
-            onClick={props.onCancel}
-          >
-            Cancel
-          </button>
+            isDisabled={quantity === props.item.quantity}
+          />
+          <Button label="Cancel" onClick={props.onCancel} />
         </div>
       </form>
     </div>
   );
 }
 
-export default EditShoppingCartItem;
+export default ShoppingCartEditItem;

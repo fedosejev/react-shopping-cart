@@ -13,13 +13,13 @@ const SHOPPING_CART_ITEMS = [
     id: "2",
     name: "Milk",
     price: 1.99,
-    quantity: 1,
+    quantity: 2,
   },
   {
     id: "3",
     name: "Cheese",
     price: 3.99,
-    quantity: 1,
+    quantity: 3,
   },
 ];
 

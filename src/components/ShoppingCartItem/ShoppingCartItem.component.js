@@ -1,11 +1,7 @@
 import React, { useState } from "react";
-import EditShoppingCartItem from "../EditShoppingCartItem/EditShoppingCartItem.component";
-
-function calculateTotalPrice(item) {
-  const total = item.price * item.quantity;
-
-  return Math.round((total + Number.EPSILON) * 100) / 100;
-}
+import { calculateTotalPrice } from "../../utils";
+import Button from "../Button/Button.component";
+import ShoppingCartEditItem from "../ShoppingCartEditItem/ShoppingCartEditItem.component";
 
 function ShoppingCartItem(props) {
   const [isEditing, setIsEditing] = useState(false);
@@ -33,7 +29,7 @@ function ShoppingCartItem(props) {
       <h5>{props.item.name}</h5>
 
       {isEditing && (
-        <EditShoppingCartItem
+        <ShoppingCartEditItem
           item={props.item}
           onCancel={toggleEditing}
           onSaveQuantity={onChange}
@@ -48,20 +44,8 @@ function ShoppingCartItem(props) {
           </div>
 
           <div className="btn-group mt-2" role="group" aria-label="Change">
-            <button
-              type="button"
-              className="btn btn-outline-secondary btn-sm"
-              onClick={toggleEditing}
-            >
-              Change quantity
-            </button>
-            <button
-              type="button"
-              className="btn btn-outline-secondary btn-sm"
-              onClick={removeItem}
-            >
-              Remove
-            </button>
+            <Button label="Change quantity" onClick={toggleEditing} />
+            <Button label="Remove" onClick={removeItem} />
           </div>
         </>
       )}

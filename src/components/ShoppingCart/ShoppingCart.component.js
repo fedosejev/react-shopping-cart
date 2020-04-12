@@ -1,19 +1,7 @@
 import React, { useState, useEffect } from "react";
+import { calculateTotalToPay, calculateTotalNumberOfItems } from "../../utils";
 import ShoppingCartSummary from "../ShoppingCartSummary/ShoppingCartSummary.component";
 import ShoppingCartItem from "../ShoppingCartItem/ShoppingCartItem.component";
-
-function calculateTotalToPay(items) {
-  const total = items.reduce(
-    (total, item) => total + item.price * item.quantity,
-    0
-  );
-
-  return Math.round((total + Number.EPSILON) * 100) / 100;
-}
-
-function calculateTotalNumberOfItems(items) {
-  return items.reduce((total, item) => total + item.quantity, 0);
-}
 
 function ShoppingCart(props) {
   const [items, setItems] = useState([]);
