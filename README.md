@@ -1,4 +1,4 @@
-# How To Shopping Cart With React
+# How To Build Shopping Cart With React
 
 Example of how to build a shopping cart with React.
 
