@@ -3,7 +3,7 @@
 Example of how to build a shopping cart with React.
 
 - See it in action: https://fedosejev.github.io/react-shopping-cart/
-- Step by step tutorial: coming soon.
+- See React Interview Questions tutorial: http://react.tips/react-interview-questions/
 
 ## Requirements
 
